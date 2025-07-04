@@ -1,0 +1,20 @@
+Building Blocks of LLD
+1. Requirement gathering
+2. Laying Down use cases
+3. UML/Class diagram
+4. Object oriented design technique to model the problem
+5. Implement Code (Design patterns + SOLID)
+
+
+Class diagram
+1. Class
+2. Relationship among classes
+3. Class Methods
+4. Class Functions
+5. Class Attributes
+
+UML diagram : How different instances of classes are interacting with each other? 
+              It potrays the behaviour and structure of the system
+
+Advanced LLD : To write testable, maintanable, refactored code which is production ready
+               and which can include the changes with the time and how to write them.
