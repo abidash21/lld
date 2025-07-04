@@ -1,0 +1,13 @@
+Object Oriented Programming: Coding up an application using objected oriented feature of language
+Object Oriented Design: Model a real world problem using object oriented design techniques and concept
+
+*OOP can be done while violating OOD principles
+
+#Object: 1. Information/Attributes(ex: Wheels, Engine)
+         2. Behaviour/Proporties(ex: Drive, accelerate)
+
+#Class: classify different kinds of objects with have similar attributes of behaviour but different values
+
+#NVT(Noun Verb Technique):
+    Noun->Objects/classes
+    Verb->Behaviour
