@@ -1,0 +1,58 @@
+Represent the system using the classes -> 1.Relationships among classes
+                                          2.Responsibilites among classes
+
+
+#Relationships
+    1. has-a Relation
+        
+        *Composition
+        - Strong ownership: The contained object cannot exist independently of the container
+        - Lifecycle bound: When the container is destroyed, the contained object is also destroyed
+        - ex:- Customer has a credit card
+
+        *Aggregation
+        - Weaker ownership: The contained object can exist independently of the container
+        - The container holds a reference to the object but doesn't control its lifecycle
+        - ex:- Cart has a product
+
+    2. is-a Relation
+       - represents inheritance
+       - It models a generalization-specialization hierarchy
+       - ex:- Pakring Lesson and Driving Lesson are part of Lessons
+
+
+#Responsibilites
+- specific roles or duties that each class has in the system
+- Knowing — data a class maintains (state, relationships)
+- Doing — behavior it performs (methods, operations)
+
+
+#Interface vs Class
+1. Interface: - It defines what a class should do
+              - only method signature no Implementation/definition
+              - ex:- interface Animal{
+                         void sounds();
+                    }
+              *in c++ we can do it by declaring the methods as virtual(pure abstract class having pure virtual functions)
+
+2. Class:     - Defines what and how
+              - Full method defines
+              - ex:- class Dog Implements Animal{
+                            public void sounds(
+                                print("Barks");
+                            )
+                     }
+
+#Encapsulation: 
+- Binding data and methods that operate on that data within one unit (class), 
+  and restricting direct access to some of the object’s components.
+- expose what's necessary through getter,setter and public method
+- Access Speicfiers
+
+#Abstraction
+- Hiding complex implementation details and showing only the essential features of an object
+- Reduce complexity by showing only relevant behavior
+- Achieved via abstract classes, interfaces, or methods
+
+* abstract class can not be instanciated, it is meant to be inherited by other.
+
