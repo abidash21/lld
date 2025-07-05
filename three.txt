@@ -56,3 +56,15 @@ Represent the system using the classes -> 1.Relationships among classes
 
 * abstract class can not be instanciated, it is meant to be inherited by other.
 
+#inheritance
+-one class (child/derived) inherits properties and behaviors (variables and methods) from another class (parent/base).
+
+#polymorphism
+-"many forms" — the ability of a function, object, or method to behave differently in different contexts.
+
+| Type             | Description                               | Example                                 |
+| ---------------- | ----------------------------------------- | --------------------------------------- |
+| **Compile-time** | Method overloading, operator overloading  | `add(int, int)` and `add(float, float)` |
+| **Run-time**     | Method overriding using virtual functions | `draw()` in base vs derived             |
+
+

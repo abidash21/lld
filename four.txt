@@ -1,0 +1,35 @@
+SOLID Principles
+S - Single Responsibility Principle(SRP)
+O - Open/Closed Principle(OCP)
+L - Liskov Substitution Principle(LSP)
+I - Interface Segregation Principle(ISP)
+D - Dependency Inversion Principle(DIP)
+
+
+1.SRP
+-  class should have only one reason to change
+
+2.OCP
+- Software entities should be open for extension, but closed for modification.
+- You should be able to add new functionality without changing existing code.
+
+3.LSP
+- Objects of a superclass should be replaceable with objects of a subclass without breaking the application
+
+4.ISP
+- Clients should not be forced to implement methods they do not use
+- Avoid fat interfaces; split them into small, focused ones.
+
+5.DIP
+- High-level modules should not depend on low-level modules. Both should depend on abstractions
+
+
+| Principle                 | Focus                 | Helps With                |
+| ------------------------- | --------------------- | ------------------------- |
+| **S**ingle Responsibility | One purpose per class | Maintainability           |
+| **O**pen/Closed           | Extend without modify | Flexibility               |
+| **L**iskov Substitution   | Respect base contract | Reusability               |
+| **I**nterface Segregation | Split interfaces      | Decoupling                |
+| **D**ependency Inversion  | Depend on abstraction | Testability & Flexibility |
+
+
