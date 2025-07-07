@@ -1,0 +1,32 @@
+Design Patterns
+1. Pattern Name
+2. Problem
+3. Solution
+4. Consequences
+
+
+#Purpose:
+    a. Creational: creating or instantiating objects and classes
+                 - Factory Method(class)
+                 - Abstact Factory
+                 - Builder
+                 - Prototype
+                 - Singleton
+    
+    b. Structural: structuring more than one classes or objects together(inheritance)
+                 - Adapter(class/object)
+                 - Bridge
+                 - Composite
+                 - Decorator
+                 - Facade
+                 - Flyweight
+                 - Proxy
+                
+    c. Behavioral: Identify and setting up common communication patterns among objects
+                 - Interpreter(class)
+                 - Template Method(class)
+                 - Chain of Responsibility
+                 - Command
+                 - Iterator
+                 - Mediator
+                 - Observer
