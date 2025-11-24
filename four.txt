@@ -1,3 +1,6 @@
+###Design Principles###
+
+//SOLID PRINCIPLES//
 SOLID Principles
 S - Single Responsibility Principle(SRP)
 O - Open/Closed Principle(OCP)
@@ -7,14 +10,20 @@ D - Dependency Inversion Principle(DIP)
 
 
 1.SRP
--  class should have only one reason to change
+- class should have only one reason to change
+- Improves maintainability: changes in one class do not affect unrelated parts.
+- Enhances readability and reduces complexity.
+
 
 2.OCP
 - Software entities should be open for extension, but closed for modification.
-- You should be able to add new functionality without changing existing code.
+- Able to add new functionality without changing existing code.
+- Encourages the creation of reusable components
 
 3.LSP
 - Objects of a superclass should be replaceable with objects of a subclass without breaking the application
+- Ensures reliability when using polymorphism
+- The inheritence hierarcy accurately models the real world domain
 
 4.ISP
 - Clients should not be forced to implement methods they do not use
@@ -32,4 +41,10 @@ D - Dependency Inversion Principle(DIP)
 | **I**nterface Segregation | Split interfaces      | Decoupling                |
 | **D**ependency Inversion  | Depend on abstraction | Testability & Flexibility |
 
+
+Benifits:
+1. Scalability: Adding new features becomes straight forward
+2. Maintainability: Changes in one part of the system have minimal impact on others
+3. Testability: Decoupled designs make unit testing easier
+4. Readability: Clear separation of concers improves code comprehensions
 
