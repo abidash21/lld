@@ -1,0 +1,63 @@
+Ex: Movie ticket booking system
+
+features - Seat Selection, Payment Processing, Ticket Generation
+
+=> Class Diagram is requried to describe essential components of a system , which will be refered to unerstand how
+   LLD principles are applied in practice
+
+=> HLD and LLD are two stages of software development
+
+=> HLD focuses on overall architecture of the system i.e.user interface, backend services, database and
+   the flow of data or components interactions.
+
+=> LLD focuses on implementation of this features. It specifies how data is validated, algorithm for an feature and
+   how the information is stored in DB. It describes the flow of data, creating blueprints for each transaction in 
+   the system, to ensure reliablity and precision.
+
+=> Activity Diagram - describes the process flow and how individual actions contribute to achieving the desired functionality
+   
+
+1. Requirement Gatherings: 
+- Identify the functionality, constraints, edge cases to ensure the design meets use needs
+- i.e. Seat Seleciton, Payment Processing, Ticket Generation
+
+2. Laying Down UseCase:
+- Define specific scenerios that the system will handle outlining inputs, actions and expected outputs
+- Helps in clarifying the scope and guiding the design process
+- i.e. Booking tickets for a single user, Handling group booking with seat proximity, Cancellation, Notification for booking confirmation
+
+3. UML(Unified Modelling Language) Diagrams:
+- Create diagram to visually represent the structure, behavior and interactions of system components
+- i.e. class diagram, sequence diagram, activity diagram
+
+4. Model Problems:
+- Solving specific problems identified during the usecase analysis
+- Breaking down the system into smaller components and addressing the individual design challenges
+- Design patterns is helpful in this page, offering reusable solutions to common design problems
+- i.e. Factory Design Pattern, Strategy Design Pattern, Observer Design Pattern
+
+5. Implement Code: 
+- Translate the design into clean, modular and efficient code adhering to coding standards and principles.
+- i.e. SOLID, DRY
+
+
+
+** How to approach LLD Interview **
+Evaluation to design software system 
+  1. Class structure
+  2. Desgin patterns
+  3. Relationships
+  4. implementation Details
+
+- Clarify Requirements and usecases
+- Writing core flow
+- Identify entity out of core flow
+- Relationship between entities
+- Write code for basic entities
+- Identify core methods for each class and concurrency Handling
+- Desgin Pattern to use
+- Implement necessary methods
+- Exception Handling
+
+
+
