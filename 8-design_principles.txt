@@ -1,0 +1,89 @@
+Design Principle
+-To maintain, scalable and easy to understand, to achieve this foundational guideline to achieve this is SOLID Principle
+- Scalability: adding new features becomes straight forward
+- Maintainability: changes in one part of the system has minimal impact on others
+- Testability: Decoupled design makes unit testing stronger
+- Readability: Clear separation of concerns improves code comprehensions
+
+SOLID Principles
+
+1. SINGLE RESPONSIBILITY PRINCIPLE
+- A class should have only one reason to change
+- Improves maintainability and Enhances readability
+
+********* bad code *********
+
+class BreadBaker {
+ public
+  void bakeBread() { System.out.println("Baking high-quality bread..."); }
+
+ public
+  void manageInventory() { System.out.println("Managing inventory..."); }
+
+ public
+  void orderSupplies() { System.out.println("Ordering supplies..."); }
+
+ public
+  void serveCustomer() { System.out.println("Serving customers..."); }
+
+ public
+  void cleanBakery() { System.out.println("Cleaning the bakery..."); }
+
+ public
+  static void main(String[] args) {
+    BreadBaker baker = new BreadBaker();
+    baker.bakeBread();
+    baker.manageInventory();
+    baker.orderSupplies();
+    baker.serveCustomer();
+    baker.cleanBakery();
+  }
+}
+
+
+******** goode code *******
+class BreadBaker {
+    public void bakeBread() {
+        System.out.println("Baking high-quality bread...");
+    }
+}
+
+class InventoryManager {
+    public void manageInventory() {
+        System.out.println("Managing inventory...");
+    }
+}
+
+class SupplyOrder {
+    public void orderSupplies() {
+        System.out.println("Ordering supplies...");
+    }
+}
+
+class CustomerService {
+    public void serveCustomer() {
+        System.out.println("Serving customers...");
+    }
+}
+
+class BakeryCleaner {
+    public void cleanBakery() {
+        System.out.println("Cleaning the bakery...");
+    }
+}
+
+public class Bakery {
+    public static void main(String[] args) {
+        BreadBaker baker = new BreadBaker();
+        InventoryManager inventoryManager = new InventoryManager();
+        SupplyOrder supplyOrder = new SupplyOrder();
+        CustomerService customerService = new CustomerService();
+        BakeryCleaner cleaner = new BakeryCleaner();
+
+        baker.bakeBread();
+        inventoryManager.manageInventory();
+        supplyOrder.orderSupplies();
+        customerService.serveCustomer();
+        cleaner.cleanBakery();
+    }
+}
