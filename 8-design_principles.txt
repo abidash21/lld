@@ -9,7 +9,6 @@ SOLID Principles
 
 1. SINGLE RESPONSIBILITY PRINCIPLE
 - A class should have only one reason to change
-- Improves maintainability and Enhances readability
 
 ********* bad code *********
 
@@ -41,7 +40,7 @@ class BreadBaker {
 }
 
 
-******** goode code *******
+******** good code *******
 class BreadBaker {
     public void bakeBread() {
         System.out.println("Baking high-quality bread...");
@@ -87,3 +86,86 @@ public class Bakery {
         cleaner.cleanBakery();
     }
 }
+
+- The code becomes more maintainable
+- Easier to understand
+- Changes in one class doesn't affect unrelated parts
+- Enhances readability and reduces complexity
+- Each class has a clear and focused Responsibility
+- The system is more modular and easy to manage
+
+
+2. OPEN CLOSED PRINCIPLE
+- Open for extension but closed for modification
+
+
+********* bad code *********
+
+class Shape {
+ private
+  String type;
+ public
+  double calculateArea() {
+    if (type.equals("circle")) {
+      // Circle area calculation
+    } else if (type.equals("rectangle")) {
+      // Rectangle area calculation
+    }
+  }
+}
+
+
+******** good code *******
+
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+class Triangle extends Shape {
+    private double height;
+    private double base;
+
+    Triangle(double height, double base) {
+        this.height = height;
+        this.base = base;
+    }
+
+    @Override
+    public double calculateArea() {
+        return 0.5 * height * base;
+    }
+}
+
+
+- Prevents breaking existing code
+- Encourages reusable components
+- Code is more maintainable
+- Adding new shape doesn't require modification in existingcode
