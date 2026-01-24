@@ -337,3 +337,122 @@ class AllInOnePrinter implements Printer, Scanner, FaxMachine {
 - Follows the principle of "interface cohesion": Each interface has a specific responsibility , leading to better cohesion and separation of concerns
 - By segregating interfaces, we ensure that classes only implement methods that are relevant to their functionality,
 
+
+5. DEPENDENCY INVERSION PRINCIPLE
+
+- High level modules should not depend on low level modules. Both should depend on abstraction.
+- Abstraction should not depend on details. Details should depend on abstraction.
+- Class should rely on abstractions (interface or abstract classes) rather than concrete implementations.
+- This allows for more flexible and decoupled code, making it easier to change implementation without affecting
+  other part of the codebase.
+
+
+********* bad code ********
+
+class EmailNotifier {
+  public void sendEmail(String message) {
+  }
+}
+
+class OrderService {
+  private EmailNotifier emailNotifier;
+  private DatabaseLogger logger;
+  private InventorySystem inventory;
+  public OrderService() {
+    // Direct dependencies on concrete implementations
+    this.emailNotifier = new EmailNotifier();
+    this.logger = new DatabaseLogger();
+    this.inventory = new InventorySystem();
+  }
+  public void placeOrder(Order order) {
+    // Process order
+    inventory.updateStock(order);
+    emailNotifier.sendEmail("Order #" + order.getId() + " placed successfully");
+    logger.logTransaction("Order placed: " + order.getId());
+  }
+}
+
+
+
+******* good code ********
+
+interface NotificationService {
+    public void sendNotification(String message);
+}
+
+interface LoggingService {
+    void logMessage(String message);
+    void logError(String error);
+}
+
+interface InventoryService {
+    void updateStock(Order order);
+    boolean checkAvailability(Product product);
+}
+
+class EmailNotifier extends NotificationService {
+    @override
+    public void sendNotification(String message){
+    }
+}
+
+class SMSNotifier implements NotificationService {
+  @Override
+  public void sendNotification(String message){
+  }
+}
+
+class PushNotifier implements NotificationService {
+  @Override
+  public void sendNotification(String message){
+  }
+}
+
+class DatabaseLogger implements LoggingService {
+  @Override
+  public void logMessage(String message) 
+  }
+  @Override
+  public void logError(String error){
+  }
+}
+
+class OrderService {
+  private final NotificationService notificationService;
+  private final LoggingService loggingService;
+  private final InventoryService inventoryService;
+
+  public OrderService(
+    NotificationService notificationService,
+    LoggingService loggingService, 
+    InventoryService inventoryService) {
+        this.notificationService = notificationService;
+        this.loggingService = loggingService;
+        this.inventoryService = inventoryService;
+  }
+
+  public void placeOrder(Order order) {
+    try {
+      // Check inventory
+      if (inventoryService.checkAvailability(order.getProduct())) {
+        // Process order
+        inventoryService.updateStock(order);
+        // Send notification
+        notificationService.sendNotification(
+            "Order #" + order.getId() + " placed successfully");
+        // Log success
+        loggingService.logMessage(
+            "Order processed successfully: " + order.getId());
+      }
+    } catch (Exception e) {
+      loggingService.logError(
+          "Error processing order: " + order.getId() + " - " + e.getMessage());
+      throw e;
+    }
+  }
+}
+
+NotificationService emailNotifier = new EmailNotifier();
+LoggingService logger = new DatabaseLogger();
+InventoryService inventory = new WarehouseInventoryService();
+OrderService orderService = new OrderService(emailNotifier, logger, inventory);
