@@ -12,6 +12,7 @@ SOLID Principles
 
 ********* bad code *********
 
+```java
 class BreadBaker {
  public
   void bakeBread() { System.out.println("Baking high-quality bread..."); }
@@ -40,7 +41,10 @@ class BreadBaker {
 }
 
 
+
 ******** good code *******
+
+
 class BreadBaker {
     public void bakeBread() {
         System.out.println("Baking high-quality bread...");
@@ -171,6 +175,7 @@ class Triangle extends Shape {
 - Adding new shape doesn't require modification in existingcode
 
 3. LISKOV SUBSTITUTION PRINCIPLE
+
 - Any class that is child of a parent class should be usable in place of its parent without any 
   any unexpected behaviour.
 
@@ -215,3 +220,49 @@ public class Main {
 ******** good code *******
 
 - When a subclass can not fulfill the contract of the parent class, it leads to a a breakdown in polymorphism
+- If new vehicles types are added that do not have engines, they too would be forced to implement startEngine() method
+- The tight coupling between vehicle class and its subclasses reduces the modularily and reusablity of the code
+
+
+abstract class Vehicle {
+    public
+    void move(){
+
+    }
+}
+
+abstract class EngineVehicle extends Vehicle {
+    public
+    void startEngine(){ }
+}
+
+abstract class NonEngineVehicle extends Vehicle {
+
+}
+
+abstract class Car extends EngineVehicle {
+    @Override public void startEngine() {
+
+    }
+}
+
+abstract class Bicycle extends NonEngineVehicle {
+
+}
+
+public class Main(){
+    public
+     static void main(String[] args){
+        EngineVehicle car = new Car();
+        car.startEngine();  
+        car.move();      
+
+        NonEngineVehicle bicycle = new Bicycle();
+        bicycle.move();  
+     }
+}
+
+- Each subtype fully satisfies the behavioural contract of its parent type
+- Client code can interact with either vehicle type without unexpected behaviour
+- The inheritance hierarchy accurately models the real world domain
+
