@@ -266,3 +266,74 @@ public class Main(){
 - Client code can interact with either vehicle type without unexpected behaviour
 - The inheritance hierarchy accurately models the real world domain
 
+4. INTERFACE SEGREGATION PRINCIPLE
+
+- This is the first principle that is applied to interface rather than classes.
+- It is similar to single responsibility principle.
+- Do not force any client to implement an interface which is irrelevant to them.
+
+
+****** bad code *******
+
+interface Machine {
+  void print();
+  void scan();
+  void fax();
+}
+
+class AllInOnePrinter implements Machine {
+  @Override public void print() {
+  }
+  @Override public void scan() {
+  }
+  @Override public void fax() {
+  }
+}
+
+class BasicPrinter implements Machine {
+  @Override public void print() {
+  }
+  @Override public void scan() {
+    throw new UnsupportedOperationException("Cannot scan");
+  }
+  @Override public void fax() {
+    throw new UnsupportedOperationException("Cannot fax");
+  }
+}
+
+******** good code ********
+
+interface Printer {
+  void print();
+}
+
+interface Scanner {
+  void scan();
+}
+
+interface FaxMachine {
+  void fax();
+}
+
+class BasicPrinter implements Printer {
+  @Override
+  public void print() {
+  }
+}
+
+class AllInOnePrinter implements Printer, Scanner, FaxMachine {
+  @Override
+  public void print() {
+  }
+  @Override
+  public void scan() {
+  }
+  @Override
+  public void fax() {
+  }
+}
+
+
+- Follows the principle of "interface cohesion": Each interface has a specific responsibility , leading to better cohesion and separation of concerns
+- By segregating interfaces, we ensure that classes only implement methods that are relevant to their functionality,
+
