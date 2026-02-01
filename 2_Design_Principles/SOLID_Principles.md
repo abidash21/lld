@@ -6,6 +6,11 @@ Design Principle
 - Readability: Clear separation of concerns improves code comprehensions
 
 SOLID Principles
+* SRP - Single Responsibility Principle
+* OCP - Open Closed Principle
+* LSP - Liskov Substitution Principle
+* ISP - Interface Segregation Principle
+* DIP - Dependency Inversion Principle
 
 1. SINGLE RESPONSIBILITY PRINCIPLE
 - A class should have only one reason to change
